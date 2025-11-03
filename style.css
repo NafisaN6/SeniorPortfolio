@@ -28,8 +28,8 @@ body {
     min-height: 100vh;
     /* Updated gradient color scheme */
     background: linear-gradient(135deg, #1C2E4A, #52677D, #BDC4D4, #0F1A2B);
-    background-size: 300% 300%;
-    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
     color: white;
 }
 
@@ -217,7 +217,8 @@ body {
 body {
     min-height: 100vh;
     background: linear-gradient(135deg, #1C2E4A, #52677D, #BDC4D4, #0F1A2B) !important;
-    background-size: 300% 300%;
-    animation: gradient 10s ease infinite;
+    background-size: 400% 400%;
+    animation: gradient 20s ease infinite;
     color: white;
+
 }
