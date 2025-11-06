@@ -93,7 +93,7 @@
     }
 
     /* Figma iframe inside */
-    .iphone-frame iframe {
+    .iphone-frame video {
         width: 100%;
         height: 100%;
         border: none;
@@ -126,7 +126,7 @@
         text-decoration: underline;
     }
 
-    iframe {
+    video {
         display: block;
         width: 100%;
         height: 600px;
@@ -136,7 +136,7 @@
         transition: box-shadow 0.3s;
     }
 
-    iframe:hover {
+    video:hover {
         box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
     }
 
@@ -185,11 +185,9 @@
   <div class="project-container">
     <!-- iPhone-style frame -->
     <div class="iphone-frame">
-      <iframe 
-        src="https://www.figma.com/design/bCU6Y10HocV4HFtT1EARia/PreParent?node-id=35-51&t=gyN6IpA9HCRiPs4O-1"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>
+      <<video width="320" height="240" controls>
+  <source src="Lab1.mp4" type="video/mp4">
+            </video>
     </div>
 
     <!-- Box next to the iPhone -->
