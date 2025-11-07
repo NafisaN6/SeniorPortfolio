@@ -1,198 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Senior Portfolio</title>
-    <link href="Favicon.png" rel="icon" type="image/png">
-    <style>
-        /* ===== General Styling ===== */
-        body {
-            margin: 0;
-            font-family: "Arial", sans-serif;
-            background: linear-gradient(135deg, #ff6b6b, #f7b733);
-            color: #28231C;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Senior Portfolio</title>
+  <link href="Favicon.png" rel="icon" type="image/png">
+  <style>
+    html, body {
+      height: 100%;  
+      width: 100%;   
+      margin: 0;     
+      padding: 0;    
+      overflow-y: scroll;  
+      font-family: 'Arial', sans-serif;
+      color: white;
+    }
 
-        h1, h2, h3 {
-            margin: 0;
-        }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1C2E4A, #52677D, #BDC4D4, #0F1A2B);
+      background-size: 400% 400%;
+      animation: gradient 20s ease infinite;
+      color: white;
+    }
 
-        /* ===== MENU ===== */
-        .menu {
-            background-color: rgba(255, 255, 255, 0.9);
-            text-align: center;
-            padding: 15px 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        .menu h2 {
-            font-size: 1.8em;
-            color: #317873;
-            text-shadow: 1px 1px white;
-        }
+    /* ===== MENU ===== */
+    .menu {
+      text-align: center;
+      margin: 20px 0;
+    }
 
-        /* ===== Banner Section ===== */
-        .banner {
-            text-align: center;
-            padding: 30px 0;
-            color: white;
-            text-shadow: 2px 2px #317873;
-        }
+    .dropbtn {
+      font-size: 1.4em;
+      padding: 12px 24px;
+      background-color: #444;
+      color: #fff;
+      border: 2px solid #5f9ea0;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
 
-        #logo {
-            width: 100px;
-            height: 100px;
-        }
+    .dropbtn:hover {
+      background-color: #5f9ea0;
+      transform: scale(1.05);
+    }
 
-        /* ===== Main Layout ===== */
-        .main-layout {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            padding: 40px;
-            gap: 30px;
-        }
+    /* ===== Banner ===== */
+    .banner {
+      background: rgba(255, 255, 255, 0.8);
+      margin: 20px auto;
+      padding: 30px;
+      width: 80%;
+      text-align: center;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      color: #317873;
+    }
 
-        /* ===== About Me Box ===== */
-        .about-box {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 3px solid #28231C;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
+    #logo {
+      width: 75px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
 
-        .about-box h2 {
-            color: #317873;
-            margin-bottom: 15px;
-            text-align: center;
-        }
+    .banner h1 {
+      font-family: 'Georgia', serif;
+      text-shadow: 1px 1px #ffffff;
+      margin: 10px 0;
+    }
 
-        .about-box h3 {
-            font-weight: normal;
-            line-height: 1.5;
-            color: #333;
-            text-align: justify;
-        }
+    /* ===== Layout (About Me + Links) ===== */
+    .main-layout {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 30px;
+    }
 
-        /* ===== Links Box ===== */
-        .links-section {
-            flex: 1;
-            min-width: 300px;
-            max-width: 400px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 3px solid #28231C;
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-        }
+    .about-box, .links-section {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      color: #333;
+      border: 2px solid #28231C;
+    }
 
-        .links-section h2 {
-            color: #317873;
-            text-align: center;
-            margin-bottom: 20px;
-        }
+    .about-box {
+      flex: 1;
+      min-width: 300px;
+      max-width: 500px;
+    }
 
-        .link-boxes {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+    .links-section {
+      flex: 1;
+      min-width: 300px;
+      max-width: 400px;
+    }
 
-        .link-box a {
-            display: block;
-            background: #317873;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            transition: background 0.3s ease;
-        }
+    .about-box h2, .links-section h2 {
+      color: #317873;
+      text-align: center;
+      margin-bottom: 15px;
+    }
 
-        .link-box a:hover {
-            background: #245b57;
-        }
+    .about-box h3 {
+      font-weight: normal;
+      line-height: 1.6;
+      text-align: justify;
+      color: #333;
+    }
 
-        /* ===== Contact Section ===== */
-        #contact {
-            text-align: center;
-            margin: 40px 0;
-            color: white;
-            text-shadow: 1px 1px #317873;
-        }
+    .link-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-        /* ===== Canvas Fix (if using animation) ===== */
-        canvas {
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;  
-            pointer-events: none;  
-        }
-    </style>
+    .link-box a {
+      display: block;
+      background: #444;
+      color: white;
+      text-decoration: none;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      transition: background 0.3s ease;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .link-box a:hover {
+      background: #5f9ea0;
+      color: #fff;
+    }
+
+    /* ===== Contact Section ===== */
+    #contact {
+      background-color: rgba(50, 50, 50, 0.9);
+      color: white;
+      padding: 20px;
+      width: 80%;
+      margin: 20px auto;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    #contact p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- Top Menu -->
-    <div class="menu">
-        <h2>MENU</h2>
+  <!-- Menu (Top Center) -->
+  <div class="menu">
+    <button class="dropbtn">MENU</button>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <img src="Favicon.png" id="logo" alt="Logo">
+    <h1>Nafisa Nawshin</h1>
+    <h1>DevOps and Project Management</h1>
+    <h1>Senior Portfolio</h1>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="main-layout">
+    <!-- About Me (Left) -->
+    <div class="about-box">
+      <h2>ABOUT ME</h2>
+      <h3>
+        My name is Nafisa Nawshin and I am a Senior student in DevOps and Project Management at Thomas Edison CTE High School. 
+        With my growing interest in coding, I have made this portfolio so I have everything I need in one easy-to-navigate place! 
+        I like spending my free time reading different stories as well as journaling about my day. 
+        My journey as a web developer was not a linear one, as I faced a lot of difficulties when learning HTML, CSS, JavaScript, and Python. 
+        In the end, perseverance helped me throughout the way and led me to become the amazing developer that I am today!
+      </h3>
     </div>
 
-    <!-- Banner -->
-    <div class="banner">
-        <img src="Favicon.png" id="logo" alt="Logo">
-        <h1>Nafisa Nawshin</h1>
-        <h1>DevOps and Project Management</h1>
-        <h1>Senior Portfolio</h1>
+    <!-- Links (Right) -->
+    <div class="links-section">
+      <h2>Links</h2>
+      <div class="link-boxes">
+        <div class="link-box"><a href="projects.html">Projects</a></div>
+        <div class="link-box"><a href="cfu.html">CFU</a></div>
+        <div class="link-box"><a href="codechallenges.html">Labs</a></div>
+        <div class="link-box"><a href="Resume.html">Resume</a></div>
+        <div class="link-box"><a href="https://nafisan5.github.io/Sophomore_Portfolio/">Sophomore Portfolio</a></div>
+        <div class="link-box"><a href="https://nafisan6.github.io/NafisaN/index.html">Junior Portfolio</a></div>
+      </div>
     </div>
+  </div>
 
-    <!-- Main Two-Column Layout -->
-    <div class="main-layout">
-        
-        <!-- Left: About Me -->
-        <div class="about-box">
-            <h2>ABOUT ME</h2>
-            <h3>
-                My name is Nafisa Nawshin and I am a Senior student in DevOps and Project Management at Thomas Edison CTE High School. 
-                With my growing interest in coding, I have made this portfolio so I have everything I need in one easy-to-navigate place! 
-                I like spending my free time reading different stories as well as journaling about my day. 
-                My journey as a web developer was not a linear one, as I faced a lot of difficulties when learning HTML, CSS, JavaScript, and Python. 
-                In the end, perseverance helped me throughout the way and led me to become the amazing developer that I am today!
-            </h3>
-        </div>
-
-        <!-- Right: Links -->
-        <div class="links-section">
-            <h2>Links</h2>
-            <div class="link-boxes">
-                <div class="link-box"><a href="projects.html">Projects</a></div>
-                <div class="link-box"><a href="cfu.html">CFU</a></div>
-                <div class="link-box"><a href="codechallenges.html">Labs</a></div>
-                <div class="link-box"><a href="Resume.html">Resume</a></div>
-                <div class="link-box"><a href="https://nafisan5.github.io/Sophomore_Portfolio/">Sophomore Portfolio</a></div>
-                <div class="link-box"><a href="https://nafisan6.github.io/NafisaN/index.html">Junior Portfolio</a></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div id="contact">
-        <h2>Contact</h2>
-        <p>Email: nafisan6@nycstudents.net</p>
-    </div>
-
-    <script src="script.js"></script>
+  <!-- Contact -->
+  <div id="contact">
+    <h2>Contact</h2>
+    <p>Email: nafisan6@nycstudents.net</p>
+  </div>
 </body>
 </html>
