@@ -1,109 +1,161 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Favicon.png" rel="icon" type="image/png">
-    <title>CFU</title>
-    <style>
-        body {
-            background: linear-gradient(135deg, #ff6b6b, #f7b733);
-            background-size: 300% 300%;
-            animation: gradient 10s ease infinite;
-            font-family: 'Arial', sans-serif;
-            color: #28231C;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="Favicon.png" rel="icon" type="image/png">
+  <title>CFU</title>
+  <style>
+    html, body {
+      height: 100%;  
+      width: 100%;   
+      margin: 0;     
+      padding: 0;    
+      overflow-y: scroll;  
+      font-family: 'Arial', sans-serif;
+      color: white;
+    }
 
-        h1 {
-            font-size: 2em;
-            color: #fff;
-            text-shadow: 2px 2px #317873;
-            margin-top: 30px;
-        }
+    /* Gradient color scheme (same as portfolio) */
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1C2E4A, #52677D, #BDC4D4, #0F1A2B);
+      background-size: 400% 400%;
+      animation: gradient 20s ease infinite;
+      color: white;
+      text-align: center;
+    }
 
-        .content-container{
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.9);
-            border: 5px solid #28231C;
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-        
-        }
+    /* Particle canvas positioned behind everything */
+    canvas {
+      position: fixed; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;  
+      pointer-events: none;
+    }
 
-        .cfut-section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: rgba(249, 249, 249, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
+    h1, h2 {
+      color: #317873;
+      text-shadow: 1px 1px #ffffff;
+    }
 
-        .cfu-section h2 {
-            font-size: 1.8em;
-            color: #317873;
-            margin: 0 0 20px;
-            padding: 10px;
-            text-shadow: 1px 1px #ffffff;
-        }
+    .cfu-section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      border: 5px solid #28231C;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-        iframe {
-            display: block;
-            width: 100%;
-            height: 600px;
-            border: 2px solid #afd69b;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: box-shadow 0.3s;
-        }
+    .cfu-section:hover {
+      transform: scale(1.02);
+    }
 
-        iframe:hover {
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
+    iframe {
+      display: block;
+      width: 100%;
+      height: 600px;
+      border: 2px solid #afd69b;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: box-shadow 0.3s;
+    }
 
+    iframe:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    }
 
-        .back-button {
-            display: inline-block;
-            margin: 20px;
-            padding: 10px 20px;
-            background-color: rgba(50, 50, 50, 0.8);
-            color: #fff;
-            border: 2px solid #5f9ea0;
-            border-radius: 5px;
-            font-size: 1.2em;
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s;
-            cursor: pointer;
-        }
+    .back-button {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background-color: rgba(50, 50, 50, 0.8);
+      color: #fff;
+      border: 2px solid #5f9ea0;
+      border-radius: 5px;
+      font-size: 1.2em;
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+      cursor: pointer;
+    }
 
-        .back-button:hover {
-            background-color: #5f9ea0;
-            color: white;
-        }
-    </style>
+    .back-button:hover {
+      background-color: #5f9ea0;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
- 
-    <a href="index.html" class="back-button">← Back to Home</a>
+  <!-- Background particle canvas -->
+  <canvas id="particleCanvas"></canvas>
 
-    <div class="cfu-section">
-  <h2>My Resume</h2>
-  <iframe 
-    src="Resume.pdf" 
-    width="100%" 
-    height="600px" 
-    style="border: 2px solid #afd69b; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-  </iframe>
-</div>
+  <a href="index.html" class="back-button">← Back to Home</a>
 
+  <div class="cfu-section">
+    <h2>My Resume</h2>
+    <iframe 
+      src="Resume.pdf" 
+      width="100%" 
+      height="600px" 
+      title="Resume Preview">
+    </iframe>
+  </div>
 
+  <!-- Particle animation script -->
+  <script>
+    const canvas = document.getElementById('particleCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
 
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Create particle objects
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 1,
+        dy: (Math.random() - 0.5) * 1
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
+
+</body>
+</html>
