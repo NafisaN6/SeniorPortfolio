@@ -1,142 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Favicon.png" rel="icon" type="image/png">
-    <title>CFU</title>
-    <style>
-        /* Gradient background */
-        body {
-            background: linear-gradient(135deg, #1C2E4A, #52677D, #BDC4D4, #0F1A2B);
-            background-size: 400% 400%;
-            animation: gradient 20s ease infinite;
-            font-family: 'Arial', sans-serif;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="Favicon.png" rel="icon" type="image/png">
+<title>CFU</title>
+<style>
+/* Gradient background animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    color: #28231C;
+    text-align: center;
+    background: linear-gradient(135deg, #ff6b6b, #f7b733);
+    background-size: 300% 300%;
+    animation: gradient 10s ease infinite;
+}
 
-        h1 {
-            font-size: 2em;
-            color: #fff;
-            text-shadow: 2px 2px #317873;
-            margin-top: 30px;
-        }
+h1, h2 {
+    color: #fff;
+    text-shadow: 2px 2px #317873;
+}
 
-        .content-container{
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-            text-align: center;
-            background-color: rgba(0,0,0,0.6);
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 15px;
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-        }
+.content-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 5px solid #28231C;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
 
-        .cfu-section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
+.cfu-section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: rgba(249, 249, 249, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 
-        .cfu-section h2 {
-            font-size: 1.6em;
-            color: #8fd3f4;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px #000;
-        }
+.cfu-section h2 {
+    font-size: 1.8em;
+    color: #317873;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-shadow: 1px 1px #ffffff;
+}
 
-        /* Make videos, iframes, and images responsive */
-        video, iframe, img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #afd69b;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            transition: box-shadow 0.3s;
-        }
+video, iframe, img {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #afd69b;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin: 0 auto;
+    transition: box-shadow 0.3s;
+}
 
-        video:hover, iframe:hover, img:hover {
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-        }
+video:hover, iframe:hover, img:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
 
-        .back-button {
-            display: inline-block;
-            margin: 20px;
-            padding: 10px 20px;
-            background-color: rgba(50, 50, 50, 0.8);
-            color: #fff;
-            border: 2px solid #5f9ea0;
-            border-radius: 5px;
-            font-size: 1.2em;
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s;
-            cursor: pointer;
-        }
-
-        .back-button:hover {
-            background-color: #5f9ea0;
-            color: white;
-        }
-    </style>
+.back-button {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background-color: rgba(50, 50, 50, 0.8);
+    color: #fff;
+    border: 2px solid #5f9ea0;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.back-button:hover {
+    background-color: #5f9ea0;
+    color: white;
+}
+</style>
 </head>
 <body>
 
-    <a href="index.html" class="back-button">← Back to Home</a>
+<a href="index.html" class="back-button">← Back to Home</a>
 
-    <div class="content-container">
+<div class="content-container">
 
-        <div class="cfu-section">
-            <h2>CFU 1 - Scene View Fly Test</h2>
-            <video controls>
-                <source src="CFU1.mp4" type="video/mp4">
-            </video>
-        </div>
-
-        <div class="cfu-section">
-            <h2>CFU 2 - Scene Gizmo, Find the Hidden Word!</h2>
-            <iframe src="https://drive.google.com/file/d/1O6WoVQ5i-gmcCFNKpzm0hlgHU_Ce14bd/preview" allowfullscreen></iframe>
-        </div>
-
-        <div class="cfu-section">
-            <h2>CFU 3 - Adding 3D Objects to a New Scene</h2>
-            <iframe src="https://drive.google.com/file/d/1mWdK6pO6-EppFtefJdiZNQ2rI6EjRqFZ/preview" allowfullscreen></iframe>
-        </div>
-
-        <div class="cfu-section">
-            <h2>CFU 4 - Importing Assets and Opening the Playground Scene</h2>
-            <img src="CFU4.png" alt="CFU4">
-        </div>
-
-        <div class="cfu-section">
-            <h2>CFU 5 - Applying Materials</h2>
-            <iframe src="https://drive.google.com/file/d/1QM5ecXkwOfm_2EpZdLhwwoUROdRvZ6Mp/preview" allowfullscreen></iframe>
-        </div>
-
-        <div class="cfu-section">
-            <h2>CFU 6 - Adding Physics</h2>
-            <iframe src="https://drive.google.com/file/d/1koI7maoXF1VREqXRpfPejyBmAhM1v06E/preview" allowfullscreen></iframe>
-        </div>
-
-        <div class="cfu-section">
-            <h2>CFU 7 - Adding Prefabs!</h2>
-            <img src="CFU7.png" alt="CFU7">
-        </div>
-
+    <div class="cfu-section">
+        <h2>CFU 1 - Scene View Fly Test</h2>
+        <video controls>
+            <source src="CFU1.mp4" type="video/mp4">
+        </video>
     </div>
 
-    <a href="index.html" class="back-button">← Back to Home</a>
+    <div class="cfu-section">
+        <h2>CFU 2 - Scene Gizmo, Find the Hidden Word!</h2>
+        <iframe src="https://drive.google.com/file/d/1O6WoVQ5i-gmcCFNKpzm0hlgHU_Ce14bd/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="cfu-section">
+        <h2>CFU 3 - Adding 3D Objects to a New Scene</h2>
+        <iframe src="https://drive.google.com/file/d/1mWdK6pO6-EppFtefJdiZNQ2rI6EjRqFZ/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="cfu-section">
+        <h2>CFU 4 - Importing Assets and Opening the Playground Scene</h2>
+        <img src="CFU4.png" alt="CFU4">
+    </div>
+
+    <div class="cfu-section">
+        <h2>CFU 5 - Applying Materials</h2>
+        <iframe src="https://drive.google.com/file/d/1QM5ecXkwOfm_2EpZdLhwwoUROdRvZ6Mp/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="cfu-section">
+        <h2>CFU 6 - Adding Physics</h2>
+        <iframe src="https://drive.google.com/file/d/1koI7maoXF1VREqXRpfPejyBmAhM1v06E/preview" allowfullscreen></iframe>
+    </div>
+
+    <div class="cfu-section">
+        <h2>CFU 7 - Adding Prefabs!</h2>
+        <img src="CFU7.png" alt="CFU7">
+    </div>
+
+</div>
+
+<a href="index.html" class="back-button">← Back to Home</a>
 
 </body>
 </html>
