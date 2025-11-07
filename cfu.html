@@ -88,11 +88,21 @@
         .back-button:hover {
             background-color: #5f9ea0;
             color: white;
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  pointer-events: none; 
+}
+
         }
     </style>
 </head>
 <body>
-
+<canvas id="particleCanvas"></canvas>
     <a href="index.html" class="back-button">Back to Home</a>
      <a href="Resume.html" class="back-button">Resume</a>
 <a href="projects.html" class="back-button">Projects</a>
