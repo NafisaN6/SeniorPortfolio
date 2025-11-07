@@ -30,12 +30,19 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* ===== MENU ===== */
-    .menu {
-      text-align: center;
-      margin: 20px 0;
+   
+    canvas {
+      position: fixed; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;  
+      pointer-events: none;  
     }
 
+    /* Keep your layout and colors here (unchanged) */
+    .menu { text-align: center; margin: 20px 0; }
     .dropbtn {
       font-size: 1.4em;
       padding: 12px 24px;
@@ -47,13 +54,8 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       transition: all 0.3s ease;
     }
+    .dropbtn:hover { background-color: #5f9ea0; transform: scale(1.05); }
 
-    .dropbtn:hover {
-      background-color: #5f9ea0;
-      transform: scale(1.05);
-    }
-
-    /* ===== Banner ===== */
     .banner {
       background: rgba(255, 255, 255, 0.8);
       margin: 20px auto;
@@ -73,13 +75,6 @@
       right: 20px;
     }
 
-    .banner h1 {
-      font-family: 'Georgia', serif;
-      text-shadow: 1px 1px #ffffff;
-      margin: 10px 0;
-    }
-
-    /* ===== Layout (About Me + Links) ===== */
     .main-layout {
       display: flex;
       justify-content: space-around;
@@ -116,13 +111,6 @@
       margin-bottom: 15px;
     }
 
-    .about-box h3 {
-      font-weight: normal;
-      line-height: 1.6;
-      text-align: justify;
-      color: #333;
-    }
-
     .link-boxes {
       display: flex;
       flex-direction: column;
@@ -147,7 +135,6 @@
       color: #fff;
     }
 
-    /* ===== Contact Section ===== */
     #contact {
       background-color: rgba(50, 50, 50, 0.9);
       color: white;
@@ -158,17 +145,15 @@
       text-align: center;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-
-    #contact p {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
   </style>
 </head>
 
 <body>
 
-  <!-- Menu (Top Center) -->
+  
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- Menu -->
   <div class="menu">
     <button class="dropbtn">MENU</button>
   </div>
@@ -183,19 +168,15 @@
 
   <!-- Main Layout -->
   <div class="main-layout">
-    <!-- About Me (Left) -->
     <div class="about-box">
       <h2>ABOUT ME</h2>
-      <h3>
-        My name is Nafisa Nawshin and I am a Senior student in DevOps and Project Management at Thomas Edison CTE High School. 
-        With my growing interest in coding, I have made this portfolio so I have everything I need in one easy-to-navigate place! 
-        I like spending my free time reading different stories as well as journaling about my day. 
-        My journey as a web developer was not a linear one, as I faced a lot of difficulties when learning HTML, CSS, JavaScript, and Python. 
-        In the end, perseverance helped me throughout the way and led me to become the amazing developer that I am today!
-      </h3>
+      <h3>My name is Nafisa Nawshin and I am a Senior student in DevOps and Project Management at Thomas Edison CTE High School. 
+      With my growing interest in coding, I have made this portfolio so I have everything I need in one easy-to-navigate place! 
+      I like spending my free time reading different stories as well as journaling about my day. 
+      My journey as a web developer was not a linear one, as I faced a lot of difficulties when learning HTML, CSS, JavaScript, and Python. 
+      In the end, perseverance helped me throughout the way and led me to become the amazing developer that I am today!</h3>
     </div>
 
-    <!-- Links (Right) -->
     <div class="links-section">
       <h2>Links</h2>
       <div class="link-boxes">
@@ -209,10 +190,13 @@
     </div>
   </div>
 
-  <!-- Contact -->
   <div id="contact">
     <h2>Contact</h2>
     <p>Email: nafisan6@nycstudents.net</p>
   </div>
+
+
+  <script src="script.js"></script>
+
 </body>
 </html>
