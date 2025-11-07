@@ -4,67 +4,190 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Senior Portfolio</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="Favicon.png" rel="icon" type="image/png">
     <style>
+        /* ===== General Styling ===== */
+        body {
+            margin: 0;
+            font-family: "Arial", sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #f7b733);
+            color: #28231C;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+        }
+
+        /* ===== MENU ===== */
+        .menu {
+            background-color: rgba(255, 255, 255, 0.9);
+            text-align: center;
+            padding: 15px 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .menu h2 {
+            font-size: 1.8em;
+            color: #317873;
+            text-shadow: 1px 1px white;
+        }
+
+        /* ===== Banner Section ===== */
+        .banner {
+            text-align: center;
+            padding: 30px 0;
+            color: white;
+            text-shadow: 2px 2px #317873;
+        }
+
+        #logo {
+            width: 100px;
+            height: 100px;
+        }
+
+        /* ===== Main Layout ===== */
+        .main-layout {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 40px;
+            gap: 30px;
+        }
+
+        /* ===== About Me Box ===== */
+        .about-box {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid #28231C;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .about-box h2 {
+            color: #317873;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .about-box h3 {
+            font-weight: normal;
+            line-height: 1.5;
+            color: #333;
+            text-align: justify;
+        }
+
+        /* ===== Links Box ===== */
+        .links-section {
+            flex: 1;
+            min-width: 300px;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 3px solid #28231C;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+        }
+
+        .links-section h2 {
+            color: #317873;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .link-boxes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .link-box a {
+            display: block;
+            background: #317873;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .link-box a:hover {
+            background: #245b57;
+        }
+
+        /* ===== Contact Section ===== */
+        #contact {
+            text-align: center;
+            margin: 40px 0;
+            color: white;
+            text-shadow: 1px 1px #317873;
+        }
+
+        /* ===== Canvas Fix (if using animation) ===== */
         canvas {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;  
-    pointer-events: none;  
-}
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;  
+            pointer-events: none;  
+        }
     </style>
 </head>
+
 <body>
 
-    <h2>MENU</h2>
+    <!-- Top Menu -->
+    <div class="menu">
+        <h2>MENU</h2>
+    </div>
 
+    <!-- Banner -->
     <div class="banner">
         <img src="Favicon.png" id="logo" alt="Logo">
         <h1>Nafisa Nawshin</h1>
-        <h1>Devops and Project Management</h1>
+        <h1>DevOps and Project Management</h1>
         <h1>Senior Portfolio</h1>
-        
     </div>
 
-    <div class="container">
-        <center><h2>ABOUT ME</h2></center>
-        <h3>My name is Nafisa Nawshin and I am a Senior student in Devops and Project Management at Thomas Edison CTE High School. 
-            With my growing interest in coding, I have made this Portfolio so I have everything that I need together, in one easy-to-navigate way! 
-            I like spending my free time reading different stories as well as journaling about my day. My journey as a web developer was not a linear one, as I faced a lot of difficulties when trying to learn the complex language
-        of HTML, CSS, JavaScript, and Python. In the end, perseverance had helped me throughout the way and led me to become the amazing developer that I am today!</h3>
+    <!-- Main Two-Column Layout -->
+    <div class="main-layout">
+        
+        <!-- Left: About Me -->
+        <div class="about-box">
+            <h2>ABOUT ME</h2>
+            <h3>
+                My name is Nafisa Nawshin and I am a Senior student in DevOps and Project Management at Thomas Edison CTE High School. 
+                With my growing interest in coding, I have made this portfolio so I have everything I need in one easy-to-navigate place! 
+                I like spending my free time reading different stories as well as journaling about my day. 
+                My journey as a web developer was not a linear one, as I faced a lot of difficulties when learning HTML, CSS, JavaScript, and Python. 
+                In the end, perseverance helped me throughout the way and led me to become the amazing developer that I am today!
+            </h3>
+        </div>
 
-
-
-
-    <div class="links-section">
-        <h2>Links</h2>
-        <div class="link-boxes">
-            <div class="link-box">
-                <a href="projects.html">Projects</a>
-            </div>
-            <div class="link-box">
-                <a href="cfu.html">CFU</a>
-            </div>
-            <div class="link-box">
-                <a href="codechallenges.html">Labs</a>
-            </div>
-             <div class="link-box">
-                <a href="Resume.html">Resume</a>
-            </div>
-            <div class="link-box">
-                <a href="https://nafisan5.github.io/Sophomore_Portfolio/">Sophomore Portfolio</a>
-            </div>
-            <div class="link-box">
-                <a href="https://nafisan6.github.io/NafisaN/index.html">Junior Portfolio</a>
+        <!-- Right: Links -->
+        <div class="links-section">
+            <h2>Links</h2>
+            <div class="link-boxes">
+                <div class="link-box"><a href="projects.html">Projects</a></div>
+                <div class="link-box"><a href="cfu.html">CFU</a></div>
+                <div class="link-box"><a href="codechallenges.html">Labs</a></div>
+                <div class="link-box"><a href="Resume.html">Resume</a></div>
+                <div class="link-box"><a href="https://nafisan5.github.io/Sophomore_Portfolio/">Sophomore Portfolio</a></div>
+                <div class="link-box"><a href="https://nafisan6.github.io/NafisaN/index.html">Junior Portfolio</a></div>
             </div>
         </div>
     </div>
 
- 
+    <!-- Contact Section -->
     <div id="contact">
         <h2>Contact</h2>
         <p>Email: nafisan6@nycstudents.net</p>
