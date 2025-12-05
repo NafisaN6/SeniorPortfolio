@@ -120,32 +120,30 @@
       background: white;
     }
 
-   
-.tablet-frame {
-  width: 800px;          
-  height: 550px;
-  background: #000;
-  border-radius: 22px;
-  padding: 14px;
-  border: 3px solid #333;
-  box-shadow: 0 10px 35px rgba(0,0,0,0.45);
-  position: relative;
-  overflow: hidden;
-}
+    /* Tablet-style frame */
+    .tablet-frame {
+      width: 800px;
+      height: 550px;
+      background: #000;
+      border-radius: 22px;
+      padding: 14px;
+      border: 3px solid #333;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.45);
+      position: relative;
+      overflow: hidden;
+    }
 
+    .tablet-frame::before {
+      display: none;
+    }
 
-.tablet-frame::before {
-  display: none;
-}
-
-.tablet-frame iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 12px;
-  background: white;
-}
-
+    .tablet-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+      background: white;
+    }
 
     /*  Info Box */
     .info-box {
@@ -205,10 +203,10 @@
   <!--  Particle Background -->
   <canvas id="particleCanvas"></canvas>
 
-   <a href="index.html" class="back-button">Back to Home</a>
- <a href="Resume.html" class="back-button">Resume</a>
-<a href="cfu.html" class="back-button">CFU</a>
-    <a href="codechallenges.html" class="back-button">Labs</a>
+  <a href="index.html" class="back-button">Back to Home</a>
+  <a href="Resume.html" class="back-button">Resume</a>
+  <a href="cfu.html" class="back-button">CFU</a>
+  <a href="codechallenges.html" class="back-button">Labs</a>
 
   <div class="content">
     <div class="project-section">
@@ -219,7 +217,6 @@
         <div class="iphone-frame">
           <iframe 
             src="https://www.figma.com/design/bCU6Y10HocV4HFtT1EARia/PreParent?node-id=35-51&t=gyN6IpA9HCRiPs4O-1"
-            frameborder="0"
             allowfullscreen>
           </iframe>
         </div>
@@ -238,19 +235,18 @@
       </div>
     </div>
   </div>
+
   <div class="content">
     <div class="project-section">
       <h2>Loved Pets Adoption Website</h2>
 
       <div class="project-container">
         <div class="tablet-frame">
-  <iframe 
-    src="https://nafisan6.github.io/LovedPetsAnimalShelter/"
-    frameborder="0"
-    allowfullscreen>
-  </iframe>
-</div>
-
+          <iframe 
+            src="https://nafisan6.github.io/LovedPetsAnimalShelter/"
+            allowfullscreen>
+          </iframe>
+        </div>
 
         <!--  Info Box -->
         <div class="info-box">
@@ -262,11 +258,10 @@
             Open To Get Full View
           </a>
         </div>
-        
-        
       </div>
     </div>
   </div>
+
   <!--  Particle Animation Script -->
   <script>
     const canvas = document.getElementById('particleCanvas');
@@ -283,30 +278,4 @@
     // Create particles
     for (let i = 0; i < 100; i++) {
       particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 1,
-        dy: (Math.random() - 0.5) * 1
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-      particles.forEach(p => {
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      });
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-  </script>
-</body>
-</html>
+        x: Math.random()
